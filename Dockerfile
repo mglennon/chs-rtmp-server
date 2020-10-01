@@ -90,7 +90,7 @@ RUN apt-get update && \
 		ca-certificates openssl libpcre3-dev \
 		librtmp1 libtheora0 libvorbis-dev libmp3lame0 \
 		libvpx4 libx264-dev libx265-dev \
-		python3-django && \
+		php-fpm php-mysql && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy files from build stage to final stage
@@ -104,8 +104,12 @@ COPY --from=builder /var/run/nginx /var/run/nginx
 RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
     ln -sf /dev/stderr /var/log/nginx/error.log
 
-# Copy  nginx config file to container
-COPY conf/nginx.conf /etc/nginx/nginx.conf
+# Make the auth directory
+RUN mkdir -p /auth
+
+# Copy  nginx config and php auth code to container
+COPY conf/* /etc/nginx/
+COPY auth/* /auth/
 
 # Copy  html players to container
 COPY players /usr/local/nginx/html/players

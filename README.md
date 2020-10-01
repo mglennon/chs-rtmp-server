@@ -1,4 +1,4 @@
-# FIRST Chesapeake RTMP Docker Server
+# FIRST Chesapeake RTMP Server Docker Container
 
 **Docker image for video streaming server that supports RTMP, HLS, and DASH streams.**
 **Designed to facilitate the streaming of remote events for [FIRST Chesapeake](https://firstchesapeake.org)**
