@@ -15,8 +15,7 @@ RUN apt-get update && \
 		openssl libssl-dev yasm \
 		libpcre3-dev librtmp-dev libtheora-dev \
 		libvorbis-dev libvpx-dev libfreetype6-dev \
-		libmp3lame-dev libx264-dev libx265-dev \
-		python3-django && \
+		libmp3lame-dev libx264-dev libx265-dev && \
     rm -rf /var/lib/apt/lists/*
 
 
@@ -90,7 +89,8 @@ RUN apt-get update && \
 	apt-get install -y \
 		ca-certificates openssl libpcre3-dev \
 		librtmp1 libtheora0 libvorbis-dev libmp3lame0 \
-		libvpx4 libx264-dev libx265-dev && \
+		libvpx4 libx264-dev libx265-dev \
+		python3-django && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy files from build stage to final stage
