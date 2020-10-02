@@ -105,11 +105,10 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
     ln -sf /dev/stderr /var/log/nginx/error.log
 
 # Make the auth directory
-RUN mkdir -p /auth && \
-	mkdir -p /etc/nginx
+RUN mkdir -p /auth
 
 # Copy  nginx config and php auth code to container
-COPY conf/* /etc/nginx/
+COPY conf/nginx.conf /etc/nginx/nginx.conf
 COPY auth/* /auth/
 
 # Copy  html players to container
