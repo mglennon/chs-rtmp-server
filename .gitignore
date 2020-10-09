@@ -1,0 +1,4 @@
+.*
+*.bat
+!.dockerignore
+!.gitignore

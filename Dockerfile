@@ -90,7 +90,7 @@ RUN apt-get update && \
 		ca-certificates openssl libpcre3-dev \
 		librtmp1 libtheora0 libvorbis-dev libmp3lame0 \
 		libvpx4 libx264-dev libx265-dev \
-		php-fpm php-mysql php-cli && \
+		php php-fpm php-mysql php-cli && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy files from build stage to final stage
